@@ -1,0 +1,26 @@
+/* MEDIA QUERIES */
+$breakpoints: (
+  medium: calc(1em/16
+    * 667),
+  tablet: calc(1em/16
+    * 768),
+  large: calc(1em/16
+    * 1024),
+  xlarge: calc(1em/16
+    * 1200),
+  xxlarge: calc(1em/16
+    * 1440),
+  xxxlarge: calc(1em/16
+    * 1600),
+);
+
+
+/* AUTOMATIC */
+$breakpoints-below: (
+  medium: calc(map-get($breakpoints, medium) - 1em/16),
+  tablet: calc(map-get($breakpoints, tablet) - 1em/16),
+  large: calc(map-get($breakpoints, large) - 1em/16),
+  xlarge: calc(map-get($breakpoints, xlarge) - 1em/16),
+  xxlarge: calc(map-get($breakpoints, xxlarge) - 1em/16),
+  xxxlarge: calc(map-get($breakpoints, xxxlarge) - 1em/16),
+);

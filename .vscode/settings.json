@@ -1,0 +1,7 @@
+{
+  "css.validate": false,
+  "files.associations": {
+    "*.css": "vue-postcss"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

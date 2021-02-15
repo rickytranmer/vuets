@@ -1,0 +1,36 @@
+@mixin breakpoint($breakpoint) {
+  @media only screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+@mixin breakpoint-below($breakpoint) {
+  @media only screen and (max-width: map-get($breakpoints-below, $breakpoint)) {
+    @content;
+  }
+}
+@mixin breakpoint-px($breakpoint) {
+  @media only screen and (min-width: calc(1/16em * $breakpoint)) {
+    @content;
+  }
+}
+@mixin breakpoint-em($breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin color-bullets($color:#000, $width:1rem, $margin-left:-1rem, $font-weight:false) {
+	list-style: none;
+
+	li::before {
+		content: '\2022';
+		display: inline-block;
+		color: $color;
+		width: $width;
+		margin-left: $margin-left;
+		font-size: 1.25em;
+		line-height: 1em;
+		transform: translateY(6.25%);
+		@if $font-weight { font-weight: $font-weight; }
+	}
+}

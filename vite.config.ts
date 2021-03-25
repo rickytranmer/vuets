@@ -1,10 +1,18 @@
 const { defineConfig } = require('vite')
+const { resolve } = require('path')
 const vue = require('@vitejs/plugin-vue')
 
 // https://vitejs.dev/config/
 module.exports = defineConfig({
   build: {
     outDir: 'build',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        // nested: resolve(__dirname, 'nested/index.html'),
+        // 'other/nested/index': resolve(__dirname, 'other/nested/index.html'),
+      }
+    }
   },
   plugins: [vue()],
   css: {
